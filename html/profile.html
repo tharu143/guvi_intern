@@ -1,47 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head>
     <title>Profile</title>
-    <link rel="stylesheet" href="../css/profile.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-         <!-- Main content section -->
-         <section class="vh-100 bg-image">
-            <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-                <div class="container h-100">
-                    <div class="row d-flex justify-content-center align-items-center h-100">
-                        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                            <div class="card" style="border-radius: 15px;">
-                                <div class="card-body p-5">
-                                    <h2 class="text-uppercase text-center mb-5">Update_profile</h2>
+    <link rel="stylesheet" href="../css/login.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
 
-        
-        <form id="profileForm">
-            <div class="form-group">
-                <label for="age">Age:</label>
-                <input type="number" class="form-control" id="age" name="age" required>
-            </div>
-            <div class="form-group">
-                <label for="dob">Date of Birth:</label>
-                <input type="date" class="form-control" id="dob" name="dob" required>
-            </div>
-            <div class="form-group">
-                <label for="contact">Contact:</label>
-                <input type="text" class="form-control" id="contact" name="contact" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Update</button>
-        </form>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </section>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap JS bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="../js/profile.js"></script>
-</body>
+  </head>
+  <body>
+    <!-- Main content section -->
+    <section class="vh-100 bg-image">
+      <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+        <div class="container h-100">
+          <div
+            class="row d-flex justify-content-center align-items-center h-100"
+          >
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+              <div class="card" style="border-radius: 15px">
+                <div class="card-body p-5">
+                  <h2 class="text-uppercase text-center mb-5">profile</h2>
+                  <div id="profileInfo">
+                    <p>
+                      <strong>First Name:</strong>
+                      <span id="profileFname"></span>
+                    </p>
+                    <p>
+                      <strong>Last Name:</strong>
+                      <span id="profileLname"></span>
+                    </p>
+                    <p>
+                      <strong>Email:</strong> <span id="profileEmail"></span>
+                    </p>
+                    <p>
+                      <strong>Date of Birth:</strong>
+                      <span id="profileDob"></span>
+                    </p>
+                    <p><strong>Age:</strong> <span id="profileAge"></span></p>
+                    <p>
+                      <strong>Emergency Contact No:</strong>
+                      <span id="profileEmergencyContact"></span>
+                    </p>
+                    <p>
+                      <strong>Photo:</strong>
+                      <img
+                        id="profilePhoto"
+                        src=""
+                        alt="User Photo"
+                        width="100"
+                      />
+                    </p>
+                  </div>
+                  <button id="editProfileBtn" class="btn btn-primary">
+                    Edit Profile
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
