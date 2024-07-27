@@ -1,0 +1,17 @@
+// styles.scss
+$color1: rgba(132, 250, 176, 0.5);
+$color2: rgba(143, 211, 244, 0.5);
+$color1-full: rgba(132, 250, 176, 1);
+$color2-full: rgba(143, 211, 244, 1);
+
+body {
+  background: #84fab0;
+  background: -webkit-linear-gradient(to right, $color1, $color2);
+  background: linear-gradient(to right, $color1, $color2);
+}
+
+.gradient-custom-4 {
+  background: #84fab0;
+  background: -webkit-linear-gradient(to right, $color1-full, $color2-full);
+  background: linear-gradient(to right, $color1-full, $color2-full);
+}

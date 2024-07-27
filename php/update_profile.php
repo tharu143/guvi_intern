@@ -1,9 +1,11 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php'; // Ensure you have the MongoDB PHP library
 
+// Connect to Redis
 $redis = new Redis();
 $redis->connect('127.0.0.1', 6379);
 
+// Get the token and fetch the user ID from Redis
 $token = $_POST['token'];
 $id = $redis->get($token);
 
@@ -71,4 +73,3 @@ if ($id) {
 
 echo json_encode($response);
 ?>
-
