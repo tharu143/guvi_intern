@@ -1,11 +1,11 @@
 <?php
-require_once __DIR__ . '/../vendor/autoload.php'; // Ensure you have the MongoDB PHP library
+require_once __DIR__ . '/../vendor/autoload.php'; //  MongoDB PHP library on locally
 
-// Connect to Redis
+// Connect to Redis server
 $redis = new Redis();
 $redis->connect('127.0.0.1', 6379);
 
-// Get the token and fetch the user ID from Redis
+// Get the token and fetch the user ID from Redis server
 $token = $_POST['token'];
 $id = $redis->get($token);
 
@@ -14,7 +14,7 @@ if ($id) {
     $dob = $_POST['dob'];
     $emergency_contact = $_POST['emergency_contact'];
 
-    // Handle file upload
+    // Handle file upload to img
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
         $target_dir = "../uploads/";
         $target_file = $target_dir . basename($_FILES["photo"]["name"]);
@@ -34,7 +34,7 @@ if ($id) {
         $photo_path = "";
     }
 
-    // Retrieve and update profile data in Redis
+    // Retrieve and update profile data in Redis server
     $profileData = json_decode($redis->get("user:$id:profile"), true);
     $profileData['dob'] = $dob;
     $profileData['emergency_contact'] = $emergency_contact;
@@ -43,7 +43,7 @@ if ($id) {
     }
     $redis->set("user:$id:profile", json_encode($profileData));
 
-    // MongoDB connection
+    // MongoDB connection init
     $client = new MongoDB\Client("mongodb://localhost:27017");
     $collection = $client->guvi->profile;
 

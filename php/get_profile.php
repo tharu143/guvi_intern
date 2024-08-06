@@ -9,7 +9,7 @@ $id = $redis->get($token);
 
 $response = array();
 if ($id) {
-    // Try to get the profile data from Redis
+    // Try to get the profile data from Redis_server
     $profileData = json_decode($redis->get("user:$id:profile"), true);
 
     if (!$profileData) {
@@ -21,7 +21,7 @@ if ($id) {
         $profileData = $collection->findOne(['user_id' => $id]);
 
         if ($profileData) {
-            // Store the profile data in Redis for future requests
+            // Store the profile data in Redis server for future requests
             $redis->set("user:$id:profile", json_encode($profileData));
         } else {
             $response['success'] = false;
